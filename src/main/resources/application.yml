@@ -1,0 +1,40 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Cleanease
+
+  datasource:
+    url: jdbc:mysql://gateway01.ap-southeast-1.prod.aws.tidbcloud.com:4000/test?sslMode=VERIFY_IDENTITY
+    username: V2z3JMkrzx2ASwy.root
+    password: XzrXLSPrItbeb0Oz
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    open-in-view: false
+
+  thymeleaf:
+    check-template-location: false
+
+app:
+  jwt:
+    secret: "1ab9a798152d312b26e680ee707872ba04f6858707dc60042a527151ad6f0755"
+    expiration: 86400000
+
+stripe:
+  publishable:
+    key: pk_test_51S1MQoGXbnWcK0Ha5KYlFvP62JE0xvcM2uuqH3Ln3DZC9RmCFBxQyK8O2yvqAQius7NLw5jgRleyxa9mwwndpyXU00nEQ08jy3
+  secret:
+    key: sk_test_51S1MQoGXbnWcK0HaNoiSQvfxSSBdx8FDmCVhTyC9Usd3HTrPaBvuKwBOtJDijyfaamW7TXOTK9tmU0OCpvk57XDD00YycBlTLq
+  webhook:
+    secret: whsec_b544028340b45f693d33cf7e32191b3e39925d99c7b233f50e8d03cba82c59df
+#
+#app:
+#  frontend-url: http://localhost:3000
